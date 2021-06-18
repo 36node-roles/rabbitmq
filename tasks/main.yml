@@ -15,5 +15,6 @@
     chart_version: 8.11.3
     values: "{{ lookup('template', 'values.yml.j2') | from_yaml | combine(rabbitmq_chart_values, recursive=True) }}"
     wait: yes
-    wait_timeout: 5m
+    wait_timeout: 1m
+    # wait_timeout: 5m
   register: rabbitmq_installed
